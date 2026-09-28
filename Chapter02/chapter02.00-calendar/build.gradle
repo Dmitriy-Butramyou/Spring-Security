@@ -21,12 +21,16 @@ gretty {
 dependencyManagement {
 	imports {
 		mavenBom 'org.springframework:spring-framework-bom:6.1.4'
+		mavenBom 'org.springframework.security:spring-security-bom:6.2.2'
 	}
 }
 
 dependencies {
 	implementation 'org.springframework:spring-webmvc'
 	implementation 'org.springframework:spring-jdbc'
+	// Spring Security
+	implementation 'org.springframework.security:spring-security-config'
+	implementation 'org.springframework.security:spring-security-web'
 	// Servlets
 	providedCompile 'jakarta.annotation:jakarta.annotation-api:2.1.1'
 	// JSR-303 Validation Support

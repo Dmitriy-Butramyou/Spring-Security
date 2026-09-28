@@ -2,6 +2,8 @@ package com.packtpub.springsecurity.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.security.Principal;
+
 /**
  * {@link CalendarUser} is this applications notion of a user. It is good to use your own objects to interact with a
  * user especially in large applications. This ensures that as you evolve your security requirements (update Spring
@@ -10,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  *  @author bnasslahsen
  */
 
-public class CalendarUser {
+public class CalendarUser implements Principal {
 	private Integer id;
 
 	private String firstName;
