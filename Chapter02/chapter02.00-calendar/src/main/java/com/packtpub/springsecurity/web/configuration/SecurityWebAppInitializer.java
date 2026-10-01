@@ -5,4 +5,13 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
 
 @Order(1)
 public class SecurityWebAppInitializer extends AbstractSecurityWebApplicationInitializer {
+
+	/**
+	 * Don't initialize the filter directly, the Spring WebApplicationInitializer
+	 * parent will take care of the initialization.
+	 */
+	public SecurityWebAppInitializer() {
+		super();
+	}
+
 }

@@ -1,5 +1,8 @@
 package com.packtpub.springsecurity.web.configuration;
 
+import java.util.HashSet;
+
+import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
@@ -24,7 +27,6 @@ public class ThymeleafConfig {
 		SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
 		resolver.setPrefix("/WEB-INF/templates/");
 		resolver.setSuffix(".html");
-		resolver.setTemplateMode("HTML");
 		resolver.setCacheable(false);
 		resolver.setOrder(1);
 		return resolver;
@@ -40,6 +42,9 @@ public class ThymeleafConfig {
 	public SpringTemplateEngine templateEngine(final ITemplateResolver templateResolver) {
 		SpringTemplateEngine engine = new SpringTemplateEngine();
 		engine.setTemplateResolver(templateResolver);
+		engine.setAdditionalDialects(new HashSet<>() {{
+			add(new LayoutDialect());
+		}});
 		return engine;
 	}
 

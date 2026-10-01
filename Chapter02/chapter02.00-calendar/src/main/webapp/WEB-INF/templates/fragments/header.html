@@ -29,21 +29,18 @@
                                                 target="_blank"
                                                 th:href="@{/admin/h2}">H2</a></li>
                     </ul>
-
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a id="navLogoutLink" th:href="@{/logout}">Logout</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
     </div>
-
-    <!-- Standard messages -->
-    <div class="alert alert-success" th:if="${#vars['message'] != null}">
-        <span th:text="${#vars['message']}"></span>
+    <div class="alert alert-success" th:if="${param.message != null}">
+        <span th:text="${message}"></span>
     </div>
-    <div class="alert alert-danger" th:if="${#vars['error'] != null}">
-        <span th:text="${#vars['error']}"></span>
-    </div>
-
 </div>
+
 
 </body>
 </html>

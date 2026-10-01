@@ -11,10 +11,9 @@ import org.springframework.context.annotation.Import;
 @Import({ SecurityConfig.class, DataSourceConfig.class })
 @ComponentScan(basePackages =
 		{
-				"com.packtpub.springsecurity.configuration",
 				"com.packtpub.springsecurity.dataaccess",
 				"com.packtpub.springsecurity.domain",
 				"com.packtpub.springsecurity.service"
 		}
 )
-public class JavaConfig {} 
+public class JavaConfig {}
